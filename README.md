@@ -15,3 +15,21 @@ decided to make a simple 4 LED pillar. I knew that if I figured this out, making
 # A 4 LED pillar
 
 I took 4 common cathode RGB LEDs and soldered the Red, green, and blue cathode leads together. 
+
+I used multiplexing. Basically, if I select a particular anode of one of the LEDs and one of the common cathode leads, I could turn a particular colour of a specific LED on. This is how LED control is typically done. By changing the order in which I select the anodes or the cathodes, I can create different patterns. 
+
+In fact, even when I need to turn all the LEDs on, I don't actually power all LEDs at once. That just wastes a lot of power. Multiplexing allows me to select one LED after another really fast so that it looks like all of them are on.
+
+# Bit Angle Modulation
+
+I used something called Bit Angle Modulation (shortened to BAM) to control the brightness of the LEDs. 
+
+Typically, to control the brightness of an LED using an Arduino, an easy method is using Pulse Width Modulation. For stuff like LEDs or motors, I can use the analog pins and inbuilt functions like analogWrite(). PWM works by sending multiple high and low pulses, kind of like turning a switch on and off really fast. 
+
+For an LED, when I use PWM, I can control it such that it's on half of the time and off half of the time. Something like this is called a 50% duty cycle. Different duty cycles have different levels of brightness. 
+
+Although PWM is easy to use with an Arduino, it's still computationally complex. It's the best option for high levels of precision control. I felt this level of precision was unnecessary to  control a couple of LEDs.
+
+This is why I used BAM. It's much simpler to implement in a program. I only need 4 bits to create 16 varying levels of brightness. We're just using 4 bit binary numbers. Being binary numbers, every bit has a place value. 
+
+Generally, for binary numbers, the place value is 2 raised to the position. For example, if we take 1001
