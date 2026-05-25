@@ -73,9 +73,15 @@ Since I figured out the multiplexing and the Bit Angle Modulation for a simple L
 
 ## Hardware
 
-I made a simple 5x6 LED matrix using 30 common cathode RGB LEDs. A common cathode RGB LED is grounded from a common lead and powered by seperate leads for seperate colours. Each colour Red, green and blue has a seperate lead. I created six rows, each with five LEDs. I joined the cathodes of the LEDs in each row to create 6 cathodes. I also joined the anodes of six LEDs in each column to create 5 red anodes, 5 blue anodes and 5 green anodes. 
+I made a simple 5x6 LED matrix using 30 common cathode RGB LEDs. A common cathode RGB LED is grounded from a common lead and powered by seperate leads for seperate colours. Each colour Red, green and blue has a seperate lead. I created six rows, each with five LEDs. I joined the cathodes of the LEDs in each row to create 6 cathodes. I also joined the anodes of six LEDs in each column to create 5 red anodes, 5 blue anodes and 5 green anodes.
 
-Powering multiple LEDs of a column from a single microcontroller can draw too much current from the microcontroller and damage it. Instead, I used transistors for all the cathodes and anodes. I used six NPN transistors for the cathodes and 15 NPN transistors for the anodes. For the cathodes, I connected the collectors to the anodes and the emitters to ground. A low gate voltage from the microcontroller to any of the transistors would short it and ground the cathode. 
+Powering multiple LEDs of a column from a single microcontroller can draw too much current from the microcontroller and damage it. Instead, I used transistors for all the cathodes and anodes. I used six NPN transistors for the cathodes and 15 NPN transistors for the anodes. For the cathodes, I connected the collectors to the anodes and the emitters to ground. A low gate voltage from the microcontroller to any of the transistors would short it and ground the cathode. For the anodes, I connected the collectors to an external 5V power supply and the emitters to the anodes.
+
+The arduino would multiplex by selecting each cathode of a row and uploading all the bits to the anodes of that row. For a particular row, depending on what turn of the cycle, it would turn on. 
+
+An arduino doesn't have so many pins to connect to the mulitple transistors. Instead, I used shift registers. Shift registers allow for serial to parallel conversion. Serial data output from a few pins on the arduino can be used to store a bunch of bits in the shift registers and push all the bits out at once. I
+
+
 
 
 
