@@ -28,8 +28,20 @@ Typically, to control the brightness of an LED using an Arduino, an easy method 
 
 For an LED, when I use PWM, I can control it such that it's on half of the time and off half of the time. Something like this is called a 50% duty cycle. Different duty cycles have different levels of brightness. 
 
-Although PWM is easy to use with an Arduino, it's still computationally complex. It's the best option for high levels of precision control. I felt this level of precision was unnecessary to  control a couple of LEDs.
+Although PWM is easy to use with an Arduino, it's still computationally complex. It's the best option for high levels of precision control. I felt this level of precision was unnecessary to  control a couple of LEDs. This is why I used BAM. It's much simpler to implement in a program. I only need 4 bits to create 16 varying levels of brightness. BAM uses the fundamental idea behind binary numbers.
 
-This is why I used BAM. It's much simpler to implement in a program. I only need 4 bits to create 16 varying levels of brightness. We're just using 4 bit binary numbers. Being binary numbers, every bit has a place value. 
+If I use a 4 bit binary number, each position can be expressed as 2 to the power of the corresponding position. If we take a number like 1001,
 
-Generally, for binary numbers, the place value is 2 raised to the position. For example, if we take 1001
+| 1  | 0 | 0 | 1 |
+| -------- | -------- | -------- | -------- |
+| $2^3$ | $2^2$ | $2^1$ | $2^0$ |
+| 8 | 4 | 2 | 1 |
+
+The maximum decimal number that can be expressed this way is 15. Therefore, if I use 4 bit Bit Angle Modulation, I can create 16 varying levels of brightness ranging from 0 to 15 (both included). In my LED pillar, this means that I would iterate through the pillar 15 times, each time moving from the last LED to the first LED. If an LED is set to brightness 0, it'll stay off all 15 times. If an LED has brightness 1111 (that's 15 in binary), it'll turn on all 15 times. What if I set the brightness to something like 9.
+
+In binary, a 9 is 
+
+     
+
+
+
