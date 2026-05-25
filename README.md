@@ -46,9 +46,8 @@ In binary, a
 
 <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/a4925bf9-552e-4fc3-a9c8-41474762a36d" />
 
-<video src="./your-video.mp4" width="640" controls autoplay loop muted></video>
+<video src="ledBlink.mp4" controls autoplay loop muted></video>
 
-![video](https://drive.google.com/file/d/1U1duFFMqOXzkUZgOv8fafkPh1MEtKwUL/view?usp=drive_link)
  
 
      
