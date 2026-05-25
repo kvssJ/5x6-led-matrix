@@ -61,7 +61,7 @@ To understand exactly what's happening, I manually slowed down the switching on 
 ![](https://youtube.com/shorts/2p29_jpqs7A?feature=share)
 
 
-![![led demo](https://youtube.com/shorts/2p29_jpqs7A?feature=share)](https://youtube.com/shorts/2p29_jpqs7A?feature=share)
+![[led demo](https://youtube.com/shorts/2p29_jpqs7A?feature=share)](https://youtube.com/shorts/2p29_jpqs7A?feature=share)
 
  
 
