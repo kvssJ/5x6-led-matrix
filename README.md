@@ -92,7 +92,22 @@ In the program, I used one of the internal hardware timers of the arduino for th
 
 Every time the ISR is called, the bits are uploaded to a specific row and a variable is updated so that the next ISR call would update the next row. The ISR would iterate from row to row, shifting out the bits to the shift register and out to the anodes and cathodes each time.
 
-For the shift registers, the code uploads a total of 21 bits, the first 6 bits for the cathodes, 5 bits for the red anodes, 5 more bits for the green cathodes, and finally, 5 bits for the blue anodes. For the cathodes, I connected each output of the shift register to each of the cathodes. To select a specific row, I'll just need to make one of the bits a 1 and all other 5 bits 0s.
+For the shift registers, the code uploads a total of 21 bits, the first 6 bits for the cathodes, 5 bits for the red anodes, 5 more bits for the green cathodes, and finally, 5 bits for the blue anodes. I stored all 21 bits as three bytes and used the shiftOut function to shift them out to the shift register.
+
+```
+output1 = cathodes[level] | red[level][0][dim] | red[level][1][dim]; 
+output2 = red[level][2][dim] | red[level][3][dim] | red[level][4][dim] | green[level][0][dim] | green[level][1][dim] | green[level][2][dim] | green[level][3][dim] | green[level][4][dim]; 
+output3 = blue[level][0][dim] | blue[level][1][dim] | blue[level][2][dim] | blue[level][3][dim] |blue[level][4][dim]; 
+```
+
+```
+//shifting out the bytes
+shiftOut(data_pin, clock, MSBFIRST, output3);
+shiftOut(data_pin, clock, MSBFIRST, output2);
+shiftOut(data_pin, clock, MSBFIRST, output1);
+```
+
+For the cathodes, I connected each output of the shift register to each of the cathodes. To select a specific row, I'll just need to make one of the bits a 1 and all other 5 bits 0s.
 
 | 000001  | 1st level |
 | -------- | -------- | 
@@ -115,6 +130,12 @@ byte red[6][5][4]; // SIX rows, FIVE leds each row, FOUR bits for BAM
 byte blue[6][5][4];
 byte green[6][5][4];
 ```
+
+# Connecting the matrix to the GUI
+
+In a different repository, I have code for a GUI I made just to create different frames and animations for the LED matrix. Once I'm done creating multiple frames, all the values would be written to a text file. I still had to figure out how I would read those values and play them on the LED matrix.
+
+
 
 
 
