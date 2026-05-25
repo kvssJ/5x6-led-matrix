@@ -48,13 +48,19 @@ In binary, a 7 is 0111.
 | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
 | 8 | 4 | 2 | 1 |
 
-Since the first three bits are all 1s, this 
+Since the first three bits are all 1s, this means that in a cycle, the LED will turn on the first time, the next two times, and even the next four times but it'll stay off the next 8 times.
 
+This is equivalent to a 50% duty cycle. To show how BAM works with the LED pillar, I set the first LED to a brightness of 15 (fully bright) and the last LED to a 1 (dim). The following image shows how this would look like in real time.
 
 
 <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/a4925bf9-552e-4fc3-a9c8-41474762a36d" />
 
-<video src="ledBlink.mp4" controls autoplay loop muted></video>
+
+To understand exactly what's happening, I manually slowed down the switching on and off of the LEDs. Since the first LED is set to a 15, it'll turn on all 15 times in a single cycle, but the last LED turns on only one time in a single cycle. The following video demonstrates this well.
+
+![](https://youtube.com/shorts/2p29_jpqs7A?feature=share)
+
+
 
  
 
