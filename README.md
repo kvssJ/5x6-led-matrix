@@ -56,12 +56,11 @@ This is equivalent to a 50% duty cycle. To show how BAM works with the LED pilla
 <img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/a4925bf9-552e-4fc3-a9c8-41474762a36d" />
 
 
-To understand exactly what's happening, I manually slowed down the switching on and off of the LEDs. Since the first LED is set to a 15, it'll turn on all 15 times in a single cycle, but the last LED turns on only one time in a single cycle. The following video demonstrates this well.
+To understand exactly what's happening, I manually slowed down the switching on and off of the LEDs.The following video demonstrates this well.
 
-![](https://youtube.com/shorts/2p29_jpqs7A?feature=share)
+Here, you can clearly see that the first LED turns on all 15 times in a single cycle and the last LED turns on only once in a cycle. This is done so fast, that it looks like the last LED is dim and the first LED is bright.
 
-
-![[led demo](https://youtube.com/shorts/2p29_jpqs7A?feature=share)](https://youtube.com/shorts/2p29_jpqs7A?feature=share)
+ 
 
  
 
