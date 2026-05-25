@@ -60,7 +60,8 @@ To understand exactly what's happening, I manually slowed down the switching on 
 
 Here, you can clearly see that the first LED turns on all 15 times in a single cycle and the last LED turns on only once in a cycle. This is done so fast, that it looks like the last LED is dim and the first LED is bright.
 
- 
+
+![](https://youtu.be/wbMBi5V1IEI)
 
  
 
