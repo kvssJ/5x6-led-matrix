@@ -39,7 +39,17 @@ If I use a 4 bit binary number, each position can be expressed as 2 to the power
 
 The maximum decimal number that can be expressed this way is 15. Therefore, if I use 4 bit Bit Angle Modulation, I can create 16 varying levels of brightness ranging from 0 to 15 (both included). In my LED pillar, this means that I would iterate through the pillar 15 times, each time moving from the last LED to the first LED. If an LED is set to brightness 0, it'll stay off all 15 times. If an LED has brightness 1111 (that's 15 in binary), it'll turn on all 15 times. What if I set the brightness to something like 9.
 
-In binary, a 9 is 
+In binary, a 
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/92113002-f60f-465e-a9b8-2750b7009068" />
+
+
+<img width="300" height="500" alt="image" src="https://github.com/user-attachments/assets/a4925bf9-552e-4fc3-a9c8-41474762a36d" />
+
+<video src="./your-video.mp4" width="640" controls autoplay loop muted></video>
+
+![video](https://drive.google.com/file/d/1U1duFFMqOXzkUZgOv8fafkPh1MEtKwUL/view?usp=drive_link)
+ 
 
      
 
