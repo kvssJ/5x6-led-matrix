@@ -79,7 +79,24 @@ Powering multiple LEDs of a column from a single microcontroller can draw too mu
 
 The arduino would multiplex by selecting each cathode of a row and uploading all the bits to the anodes of that row. For a particular row, depending on what turn of the cycle, it would turn on. 
 
-An arduino doesn't have so many pins to connect to the mulitple transistors. Instead, I used shift registers. Shift registers allow for serial to parallel conversion. Serial data output from a few pins on the arduino can be used to store a bunch of bits in the shift registers and push all the bits out at once. I
+An arduino doesn't have so many pins to connect to the mulitple transistors. Instead, I used shift registers. Shift registers allow for serial to parallel conversion. Serial data output from a few pins on the arduino can be used to store a bunch of bits in the shift registers and push all the bits out at once. 
+
+## Software
+
+In the program, I used one of the internal hardware timers of the arduino for the multiplexing. I created an Interrupt Service Routine (ISR) and set the timer such that the ISR is called every 3.204 milliseconds.
+
+Every time the ISR is called, the bits are uploaded to a specific row and a variable is updated so that the next ISR call would update the next row. The ISR would iterate from row to row, shifting out the bits to the shift register and out to the anodes and cathodes each time.
+
+For the shift registers, the code uploads a total of 21 bits, the first 6 bits for the cathodes, 5 bits for the red anodes, 5 more bits for the green cathodes, and finally, 5 bits for the blue anodes. For the cathodes, I connected each output of the shift register to each of the cathodes. To select a specific row, I'll just need to make one of the bits a 1 and all other 5 bits 0s.
+
+| 000001  | 1st level |
+| -------- | -------- | 
+| 000010 | 2nd level | 
+| 000100 | 3rd level |
+| 001000 | 4th level |
+| 010000 | 5th level |
+| 100000 | 6th level |
+
 
 
 
