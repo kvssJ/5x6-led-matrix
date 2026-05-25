@@ -69,11 +69,16 @@ This simplified the programming a lot. I used just a few simple functions to pro
 
 # Expanding to an LED matrix
 
+<img width="400" height="600" alt="image" src="https://github.com/user-attachments/assets/4ead0361-7183-48bb-9000-56e4d1527f57" />
+
 Since I figured out the multiplexing and the Bit Angle Modulation for a simple LED pillar, it was quite easy to move to an LED matrix. 
 
 ## Hardware
 
 I made a simple 5x6 LED matrix using 30 common cathode RGB LEDs. A common cathode RGB LED is grounded from a common lead and powered by seperate leads for seperate colours. Each colour Red, green and blue has a seperate lead. I created six rows, each with five LEDs. I joined the cathodes of the LEDs in each row to create 6 cathodes. I also joined the anodes of six LEDs in each column to create 5 red anodes, 5 blue anodes and 5 green anodes.
+
+<img width="300" height="350" alt="image" src="https://github.com/user-attachments/assets/aa94ac81-d0c4-4d91-8722-940b801095b2" />
+
 
 Powering multiple LEDs of a column from a single microcontroller can draw too much current from the microcontroller and damage it. Instead, I used transistors for all the cathodes and anodes. I used six NPN transistors for the cathodes and 15 NPN transistors for the anodes. For the cathodes, I connected the collectors to the anodes and the emitters to ground. A low gate voltage from the microcontroller to any of the transistors would short it and ground the cathode. For the anodes, I connected the collectors to an external 5V power supply and the emitters to the anodes.
 
