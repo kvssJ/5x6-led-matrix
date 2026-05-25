@@ -14,9 +14,9 @@ decided to make a simple 4 LED pillar. I knew that if I figured this out, making
 
 # A 4 LED pillar
 
-I took 4 common cathode RGB LEDs and soldered the Red, green, and blue cathode leads together. 
+I took 4 common cathode RGB LEDs and soldered the Red, green, and blue anode leads together. 
 
-I used multiplexing. Basically, if I select a particular anode of one of the LEDs and one of the common cathode leads, I could turn a particular colour of a specific LED on. This is how LED control is typically done. By changing the order in which I select the anodes or the cathodes, I can create different patterns. 
+I used multiplexing. Basically, if I select a particular cathode of one of the LEDs and one of the common anode leads, I could turn a particular colour of a specific LED on. This is how LED control is typically done. By changing the order in which I select the anodes or the cathodes, I can create different patterns. 
 
 In fact, even when I need to turn all the LEDs on, I don't actually power all LEDs at once. That just wastes a lot of power. Multiplexing allows me to select one LED after another really fast so that it looks like all of them are on.
 
@@ -24,7 +24,7 @@ In fact, even when I need to turn all the LEDs on, I don't actually power all LE
 
 <img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/92113002-f60f-465e-a9b8-2750b7009068" />
 
-I used something called Bit Angle Modulation (shortened to BAM) to control the brightness of the LEDs. 
+I used something called Bit Angle Modulation (shortened to BAM) to control the brightness of the individual LEDs.
 
 Typically, to control the brightness of an LED using an Arduino, an easy method is using Pulse Width Modulation. For stuff like LEDs or motors, I can use the analog pins and inbuilt functions like analogWrite(). PWM works by sending multiple high and low pulses, kind of like turning a switch on and off really fast. 
 
