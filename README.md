@@ -58,10 +58,31 @@ This is equivalent to a 50% duty cycle. To show how BAM works with the LED pilla
 
 To understand exactly what's happening, I manually slowed down the switching on and off of the LEDs.The following video demonstrates this well.
 
-Here, you can clearly see that the first LED turns on all 15 times in a single cycle and the last LED turns on only once in a cycle. This is done so fast, that it looks like the last LED is dim and the first LED is bright.
+![led blink demo](https://youtu.be/wbMBi5V1IEI?si=WqowApnVY7awBI-Y)
+
+Here, you can clearly see that the first LED turns on all 15 times in a single cycle and the last LED turns on only once in a cycle. This is done so fast, that it looks like the last LED is dim and the first LED is bright. In the program, I added a function called LED that takes the number and the brightness of each colour as input. 
+
+```
+void LED(int number, int blueBrightness, int greenBrightness, int redBrightness)
+```
+This simplified the programming a lot. I used just a few simple functions to program the LED pillar.
+
+# Expanding to an LED matrix
+
+Since I figured out the multiplexing and the Bit Angle Modulation for a simple LED pillar, it was quite easy to move to an LED matrix. 
+
+## Hardware
+
+I made a simple 5x6 LED matrix using 30 common cathode RGB LEDs. A common cathode RGB LED is grounded from a common lead and powered by seperate leads for seperate colours. Each colour Red, green and blue has a seperate lead. I created six rows, each with five LEDs. I joined the cathodes of the LEDs in each row to create 6 cathodes. I also joined the anodes of six LEDs in each column to create 5 red anodes, 5 blue anodes and 5 green anodes. 
+
+Powering multiple LEDs of a column from a single microcontroller can draw too much current from the microcontroller and damage it. Instead, I used transistors for all the cathodes and anodes. I used six NPN transistors for the cathodes and 15 NPN transistors for the anodes. For the cathodes, I connected the collectors to the anodes and the emitters to ground. A low gate voltage from the microcontroller to any of the transistors would short it and ground the cathode. 
 
 
-![](https://youtu.be/wbMBi5V1IEI)
+
+
+
+
+
 
  
 
