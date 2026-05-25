@@ -97,11 +97,19 @@ For the shift registers, the code uploads a total of 21 bits, the first 6 bits f
 | 010000 | 5th level |
 | 100000 | 6th level |
 
+To actually set the colour for each LED, I created a helper function called LED that takes the row, column, and the Red, Green and Blue brightness values as input.
 
+```
+void LED(int row, int column, int blueBrightness, int greenBrightness, int redBrightness)
+```
 
+I used three 3D arrays to store all the bits for the red, green, and blue anodes. The values of the arrays are initialised in the LED function and shifted out when the ISR is called.
 
-
-
+```
+byte red[6][5][4]; // SIX rows, FIVE leds each row, FOUR bits for BAM
+byte blue[6][5][4];
+byte green[6][5][4];
+```
 
 
 
