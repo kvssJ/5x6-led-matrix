@@ -133,7 +133,9 @@ byte green[6][5][4];
 
 # Connecting the matrix to the GUI
 
-In a different repository, I have code for a GUI I made just to create different frames and animations for the LED matrix. Once I'm done creating multiple frames, all the values would be written to a text file. I still had to figure out how I would read those values and play them on the LED matrix.
+In a different repository, I have code for a GUI I made just to create different frames and animations for the LED matrix. I added the python file for the GUI (ledControl.py) in this repo as well. Once I'm done creating multiple frames, all the values would be written to a text file. I still had to figure out how I would read those values and play them on the LED matrix.
+
+To do this, I used serial communication. I wrote a python program called valuesRead.py to read the values from the text file and write them to the LED matrix
 
 
 
