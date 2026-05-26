@@ -137,6 +137,22 @@ In a different repository, I have code for a GUI I made just to create different
 
 To do this, I used serial communication. I wrote a python program called valuesRead.py to read the values from the text file and write them to the LED matrix. I had to try different settings for the timer and speed up the code to ensure that all the bits are uploaded to the LED matrix in the short time interval between two ISR calls.
 
+To get all the bytes without any issues, I wrote the program such that the python file only sends the bytes on request. Whenever the arduino needs the bytes, it sends a string "S" as the message to request the python file for the bytes of a particular row. This worked well. However, I still face a few issues sometimes with the LED matrix getting stuck or what I assume is corruption of bytes during the serial communication.
+
+# Demo
+
+To show that the LED matrix works well, I designed a few animations using the GUI and ran them on the LED matrix. 
+
+To check if different colours work well, I displayed my name on the LED matrix
+
+To check how well the RGB colour mixing worked, I made a pink heart and displayed it on the LED matrix. 
+
+
+
+
+
+
+
 
 
 
