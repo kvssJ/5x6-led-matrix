@@ -152,7 +152,15 @@ To check how well the RGB colour mixing worked, I made a pink heart and displaye
 
 Demo : https://youtu.be/TRvLkg9ZvYQ
 
+# Issues
 
+To be honest, there are still a few issues and a few things that can be improved. The main issue is with the LED getting stuck due to issues during the serial communication. I think the most reliable fix for this is adding a block of code to detect any incomplete upload of bytes or corruption of bytes and fix it accordingly. 
+
+Another issue is with the colour mixing. I think, in the hopes of getting some cool results, I completely forgot that even RGB LEDs have some limitations. In my case, not all RGB values be displayed properly on an LED matrix. I can't take some values like (121, 87, 63) and expect it to work well. Since I was using 4 bit Bit Angle Modulation, I thought using multiples of 5 would fix the issue. I added a piece of code to round every red, green, and blue value to the nearest multiple of 5. This definitely improved the display, but I think a complete fix would be to round it to the closest multiple of 15. 
+
+# Future plans
+
+I think a lot of cool things could be done using an LED matrix. The first thing I want to do is expand the LED matrix to a much larger matrix. This would enable me to do a lot more with the matrix. I could play games like tetris, display video frames, or images on the matrix. Having worked on a 1D LED pillar, an LED matrix, I want to use the same code and ideas to increase the complexity a step further and make a 3D LED cube.
 
 
 
