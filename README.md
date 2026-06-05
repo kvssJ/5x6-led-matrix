@@ -109,8 +109,9 @@ shiftOut(data_pin, clock, MSBFIRST, output1);
 
 For the cathodes, I connected each output of the shift register to each of the cathodes. To select a specific row, I'll just need to make one of the bits a 1 and all other 5 bits 0s.
 
-| 000001  | 1st level |
+| binary number | level | 
 | -------- | -------- | 
+| 000001  | 1st level |
 | 000010 | 2nd level | 
 | 000100 | 3rd level |
 | 001000 | 4th level |
@@ -145,9 +146,11 @@ To show that the LED matrix works well, I designed a few animations using the GU
 
 To check if different colours work well, I displayed my name on the LED matrix
 
+Demo : https://youtu.be/fIJsgf3Nfeo
+
 To check how well the RGB colour mixing worked, I made a pink heart and displayed it on the LED matrix. 
 
-
+Demo : https://youtu.be/TRvLkg9ZvYQ
 
 
 
