@@ -58,7 +58,7 @@ This is equivalent to a 50% duty cycle. To show how BAM works with the LED pilla
 
 To understand exactly what's happening, I manually slowed down the switching on and off of the LEDs.The following video demonstrates this well.
 
-![led blink demo](https://youtu.be/wbMBi5V1IEI?si=WqowApnVY7awBI-Y)
+demo : https://youtu.be/wbMBi5V1IEI?si=WqowApnVY7awBI-Y
 
 Here, you can clearly see that the first LED turns on all 15 times in a single cycle and the last LED turns on only once in a cycle. This is done so fast, that it looks like the last LED is dim and the first LED is bright. In the program, I added a function called LED that takes the number and the brightness of each colour as input. 
 
