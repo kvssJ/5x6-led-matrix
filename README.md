@@ -160,7 +160,7 @@ Another issue is with the colour mixing. I think, in the hopes of getting some c
 
 # Future plans
 
-I think a lot of cool things could be done using an LED matrix. The first thing I want to do is expand the LED matrix to a much larger matrix. This would enable me to do a lot more with the matrix. I could play games like tetris, display video frames, or images on the matrix. Having worked on a 1D LED pillar, an LED matrix, I want to use the same code and ideas to increase the complexity a step further and make a 3D LED cube.
+I think a lot of cool things could be done using an LED matrix. The first thing I want to do is expand the LED matrix to a much larger matrix. This would enable me to do a lot more with it. I could play games like tetris and display video games or images on the matrix. Having worked on a 1D LED pillar and an LED matrix, I want to use the same code and ideas to increase the complexity a step further and make a 3D LED cube.
 
 
 
